@@ -1,4 +1,4 @@
-import { Manager } from "./manager"
+import { Manager } from "./manager.js"
 
 class table {
     /**
@@ -27,16 +27,15 @@ class table {
         for (let a of headerarray) {
             const th = document.createElement("th")
             th.innerText=a.name
-            if (a.colSpan) {
-                th.colSpan = a.colSpan
+            if (a.colSpan == 2) {
+                th.colSpan = 2
             }
             tr.appendChild(th)
         }
 
         const tbody = document.createElement("tbody")
         table.appendChild(tbody)
-
-
+        this.#tbody = tbody
     }
 }
 export {table}

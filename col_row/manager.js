@@ -1,14 +1,16 @@
 /**
  * @import { FormFieldType,HeaderArrayType,ColspanType,RowspanType } from './functions.js'
  * @callback addcallback
- * @param {ColspanType | RowspanType} element
+ * @param {ColspanType[] | RowspanType[]} element
  * @returns {void}
  */
+import { ColspanType, RowspanType } from './functions.js';
 class Manager{
     /**
      * @type {ColspanType[] | RowspanType[]}
      */
     #dataarray
+
     /**
      * @type {addcallback}
      */
@@ -33,6 +35,7 @@ class Manager{
     set addcallback(element) {
         this.#addcallback = element
     }
+    
 
 }
 export {Manager}

@@ -5,7 +5,10 @@ import data from './data.json' with {type:'json'}
 import { Manager } from './manager.js'
 import { table } from './table.js';
 
-const Manager = new Manager();
-Manager.addcallback = (element) => {console.log(element)};
+const manager = new Manager();
+manager.addcallback = (element) => {console.log(element)};
 
-const table = new table();
+const Table = new table(data.colspanHeaderArray,manager);
+for (const a of data.colspanDataArr) {
+    manager.AddElement(a)
+}
