@@ -4,7 +4,6 @@
  * @param {ColspanType[] | RowspanType[]} element
  * @returns {void}
  */
-import { ColspanType, RowspanType } from './functions.js';
 class Manager{
     /**
      * @type {ColspanType[] | RowspanType[]}
