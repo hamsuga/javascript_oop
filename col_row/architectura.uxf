@@ -1,0 +1,74 @@
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>140</x><y>133</y><w>196</w><h>28</h></coordinates><panel_attributes>HTMLTableSectionElement</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>133</y><w>182</w><h>28</h></coordinates><panel_attributes>HTMLFormElement</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>763</x><y>133</y><w>196</w><h>28</h></coordinates><panel_attributes>HTMLInputElement</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>133</x><y>98</y><w>833</w><h>133</h></coordinates><panel_attributes>SimpleClass
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>546</x><y>133</y><w>210</w><h>28</h></coordinates><panel_attributes>HTMLDivElement</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>133</x><y>231</y><w>833</w><h>259</h></coordinates><panel_attributes>Mi View osztalyaink
+bg=orange</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>133</x><y>490</y><w>833</w><h>231</h></coordinates><panel_attributes>Mi Tipusaink
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>133</x><y>721</y><w>833</w><h>182</h></coordinates><panel_attributes>Service
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>161</x><y>266</y><w>238</w><h>98</h></coordinates><panel_attributes>Table
+--
+- tbody: HTMLTableSectionElement
+- manager: Manager
+--
++ constructor (header: HeaderType[], Manager: Manager)
++ setAppendRow (callback: TableCallback) void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>154</x><y>399</y><w>287</w><h>49</h></coordinates><panel_attributes>TableCallback
+--
++ (tbody: HtmlTableSectionElement, elem: ColspanType|RowspanType)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>259</x><y>357</y><w>21</w><h>56</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>154</y><w>21</w><h>126</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>546</x><y>756</y><w>294</w><h>119</h></coordinates><panel_attributes>Manager
+--
+- dataArray: ColspanType[] | RowspanType[]
+- addCallback: AddCallback
+--
++ addElement(elem: ColspanType | RowspanType)
++ set addCallback(element: addcallback) void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>147</x><y>742</y><w>294</w><h>133</h></coordinates><panel_attributes>addCallback
+--
++ (elem:RowspanType | ColspanType)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>434</x><y>798</y><w>126</w><h>28</h></coordinates><panel_attributes>lt=&lt;&lt;-
+Az addElementmeghivja</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>91</x><y>315</y><w>91</w><h>525</h></coordinates><panel_attributes>lt=&lt;.
+a set AppendRow 
+allitja be </panel_attributes><additional_attributes>80;730;10;730;10;10;100;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>189</x><y>525</y><w>84</w><h>154</h></coordinates><panel_attributes>ColspanType
+--
++ neve: string
++ kor: string
++ szerelme1: string
++ szerelme2: string
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>294</x><y>525</y><w>91</w><h>154</h></coordinates><panel_attributes>RowspanType
+--
++ nemzet: string
++ szerzo: string
++ mu: string
++ szerzo2: string
++ mu2: string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>406</x><y>525</y><w>91</w><h>154</h></coordinates><panel_attributes>FormFieldType
+--
++ Label: string
++ name: string
++ id: string 
++ required: boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>672</y><w>469</w><h>98</h></coordinates><panel_attributes>lt=&lt;-
+m1= 0..*</panel_attributes><additional_attributes>10;10;10;50;650;50;650;120</additional_attributes></element><element><id>Relation</id><coordinates><x>322</x><y>672</y><w>399</w><h>98</h></coordinates><panel_attributes>lt=&lt;-
+m1= 0..*</panel_attributes><additional_attributes>10;10;10;30;550;30;550;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>483</x><y>259</y><w>203</w><h>189</h></coordinates><panel_attributes>FormController
+--
+- manager: Manager
+- formFieldList: FormField[]
+- form: HtmlFormElement
+--
++ constructor(FieldList, FormFieldType[], Manager)
+- createElement(): ColspanType | RowspanType
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>714</x><y>259</y><w>210</w><h>189</h></coordinates><panel_attributes>FormField
+--
+- input: HtmlInput
+- name: string
+- errordiv: HtmlDivElement
+- required: boolean
+--
++ constructor(id: string, label:string, required: boolean,parent: HTMLFormElement)
++ get name() string
++ value() string
++ validate()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>441</y><w>357</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;.
+Letrehozza a beviteli mezok alapjan</panel_attributes><additional_attributes>10;120;10;100;490;100;490;10</additional_attributes></element><element><id>Relation</id><coordinates><x>329</x><y>441</y><w>280</w><h>98</h></coordinates><panel_attributes>lt=&lt;&lt;.
+Letrehozza a beviteli mezok alapjan</panel_attributes><additional_attributes>10;120;10;80;380;80;380;10</additional_attributes></element><element><id>Relation</id><coordinates><x>413</x><y>154</y><w>98</w><h>119</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;80;120;80;120;150</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>441</y><w>196</w><h>329</h></coordinates><panel_attributes>lt=&lt;-
+EventListenerben meghivja az addelementet</panel_attributes><additional_attributes>10;450;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>644</x><y>154</y><w>140</w><h>119</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;80;180;80;180;150</additional_attributes></element><element><id>Relation</id><coordinates><x>826</x><y>154</y><w>21</w><h>119</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;150</additional_attributes></element><element><id>Relation</id><coordinates><x>679</x><y>336</y><w>49</w><h>28</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>154</y><w>259</w><h>119</h></coordinates><panel_attributes>lt=&lt;.
+Hozza csatoljuk a beviteli mezot</panel_attributes><additional_attributes>10;10;10;60;350;60;350;150</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>441</y><w>273</w><h>154</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;200;370;200;370;10</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>441</y><w>140</w><h>133</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;170;180;170;180;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>784</x><y>518</y><w>154</w><h>168</h></coordinates><panel_attributes>HeaderType
+--
++ name: string
++ colspan: number [0..1] </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>105</x><y>49</y><w>931</w><h>483</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>80;360;10;360;10;10;1310;20;1310;610;1070;610;1070;670</additional_attributes></element><element><id>UMLNote</id><coordinates><x>1015</x><y>616</y><w>98</w><h>49</h></coordinates><panel_attributes>Note..
+bg=blue
+folyamatos: assziacio
+szagatott: fuggoseg</panel_attributes><additional_attributes></additional_attributes></element></diagram>
