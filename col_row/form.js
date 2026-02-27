@@ -24,7 +24,7 @@ class FormController{
         this.#manager = manager;
 
         const form = document.createElement('form');
-        this.#form = form
+        this.#form = form;
         document.body.appendChild(form);
         this.#formFieldElemList = [];
         for (const formField of formFields) {

@@ -1,0 +1,107 @@
+<diagram program="umletino" version="15.1"><zoom_level>6</zoom_level><element><id>UMLClass</id><coordinates><x>192</x><y>4</y><w>270</w><h>228</h></coordinates><panel_attributes>View Element
+bg=red
+--
+-div: htmldivElement
+-id: string
+-activatecallback : activatecallback
+--
++ appendTo htmlelement  void
++ set activatecallback : activatecallback
++ get div() htmldivelement
++ activate(id, string) void
++constructor(id: string) void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>348</x><y>166</y><w>84</w><h>42</h></coordinates><panel_attributes>div felel az adott
+ komponens
+ tartalmanak
+ megjeleniteseert
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>594</x><y>88</y><w>174</w><h>36</h></coordinates><panel_attributes>Activatecallback
+--
+{} void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>100</y><w>150</w><h>24</h></coordinates><panel_attributes>lt=&lt;-
+az activateben hivjuk meg</panel_attributes><additional_attributes>230;20;10;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>192</x><y>166</y><w>132</w><h>66</h></coordinates><panel_attributes>az activate ellenorzi
+hogy megjelenjen a
+div vagy ne jelenjen meg
+
+az activate a navigacios bar nal 
+felul lesz irva
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>468</x><y>16</y><w>132</w><h>66</h></coordinates><panel_attributes>az activate callbacket az adott le 
+szarmozottba implementalhatjuk
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>198</x><y>286</y><w>270</w><h>210</h></coordinates><panel_attributes>Nav bar
+bg=green
+--
+-viewElementList ViewElement[]
+--
++ addviewelement(label:string,viewElement)
++activate(value: string)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>204</x><y>346</y><w>144</w><h>42</h></coordinates><panel_attributes>Az activate fuggveny hivodik
+meg a radio gombok event listenerjenel
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>318</x><y>226</y><w>30</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>402</x><y>226</y><w>18</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>492</x><y>172</y><w>168</w><h>126</h></coordinates><panel_attributes>TableView
+bg=green
+--
+-manager: authormanager
+-tbody: htmlTableSectionElement
+--
++constructor (id:string,
+headerarray: string[],manager:authormanager)
+-tablecallback() : tablecallback</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>208</y><w>48</w><h>18</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>726</x><y>136</y><w>168</w><h>126</h></coordinates><panel_attributes>FormView
+bg=green
+--
+-manager : authormanager
+-forminputlist: FormInput[]
+--
++constructor (id:string,
+formfieldlist: FormFieldType,
+manager:authormanager)
+-createElement(): authortype</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>136</y><w>282</w><h>18</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;450;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>328</y><w>318</w><h>180</h></coordinates><panel_attributes>import/export
+bg=green
+--
+-manager: authormanager
+--
+constructor(id: string, manager:authormanager)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>136</y><w>258</w><h>204</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;410;10;410;320</additional_attributes></element><element><id>UMLClass</id><coordinates><x>546</x><y>736</y><w>240</w><h>162</h></coordinates><panel_attributes>authormanager
+bg=orange
+--
+-authorlist: author[]
+-tablecallback: tablecallback 
+-addElementresult: addelementresult
+-importresultcallback: importresultcallback
+--
++addelement(element authortype) void
++getallElement(author[])
++addelementList( elementList: authorType[]) void
++getexportcontent() string
+(setterek a callbacknel)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>204</x><y>742</y><w>210</w><h>132</h></coordinates><panel_attributes>author
+bg=orange
+--
+-id: string
+-name: string
+-work: string
+-concept: string
+--
+(mindegyiknek van get,set erre: kovi orara be irni)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>408</x><y>814</y><w>150</w><h>18</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>230;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>544</y><w>90</w><h>36</h></coordinates><panel_attributes>tablecallback
+--
+(authorlist: author[]) void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>444</x><y>556</y><w>234</w><h>192</h></coordinates><panel_attributes>lt=&lt;-
+meghivja a getallelementben
+</panel_attributes><additional_attributes>10;10;210;10;210;300</additional_attributes></element><element><id>Relation</id><coordinates><x>426</x><y>292</y><w>144</w><h>264</h></coordinates><panel_attributes>lt=&lt;.
+implemental</panel_attributes><additional_attributes>10;420;10;370;150;370;150;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>792</x><y>688</y><w>108</w><h>30</h></coordinates><panel_attributes>addelementresultcallback
+--
+(message: string) void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>712</y><w>120</w><h>66</h></coordinates><panel_attributes>lt=&lt;-
+hivja az addelementnel</panel_attributes><additional_attributes>50;10;50;90;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>822</x><y>256</y><w>84</w><h>444</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;10;70;120;70;120;720</additional_attributes></element><element><id>UMLClass</id><coordinates><x>588</x><y>538</y><w>96</w><h>36</h></coordinates><panel_attributes>importresultcallback
+--
+(message: string) void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>636</x><y>502</y><w>18</w><h>48</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>606</x><y>568</y><w>108</w><h>180</h></coordinates><panel_attributes>lt=&lt;-
+hivja az addelementlistener</panel_attributes><additional_attributes>10;10;10;280</additional_attributes></element><element><id>UMLClass</id><coordinates><x>696</x><y>592</y><w>114</w><h>48</h></coordinates><panel_attributes>authorType
+--
++author: string
++ work: string
++ concept: string</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>774</x><y>502</y><w>18</w><h>102</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;150;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>738</x><y>634</y><w>48</w><h>114</h></coordinates><panel_attributes>lt=&lt;.
+at alakitja</panel_attributes><additional_attributes>10;170;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>810</x><y>262</y><w>84</w><h>372</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;600;120;600;120;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>960</x><y>142</y><w>132</w><h>150</h></coordinates><panel_attributes>forminput
+--
+-inputElement htmlinputelement
+-errordiv htmldiv
+-name string
+--
++constructor(id: string,
+label:string,name:string
+,parent: form)
++validate() boolean
++get value(string)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>888</x><y>214</y><w>84</w><h>24</h></coordinates><panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes><additional_attributes>10;10;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>498</x><y>292</y><w>60</w><h>528</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>80;860;10;860;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>546</x><y>502</y><w>18</w><h>246</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;390;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>238</y><w>162</w><h>600</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;980;250;980;240;10;190;10</additional_attributes></element></diagram>
