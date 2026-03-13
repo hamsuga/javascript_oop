@@ -28,6 +28,12 @@ class Table extends viewelement {
         this.#tbody = document.createElement("tbody")
         table.appendChild(this.#tbody)
         this.#manager.tablecallback = (authorlist) => {
+            if (authorlist.lenght == 0) {
+                const tr = document.createElement("tr")
+                this.#tbody.appendChild(tr)
+                const td =createTableCell(tr, "nincs meglenitendo elem")
+                td.colSpan = 3;
+            }
             for(const author of authorlist) {
                 const tr = document.createElement("tr")
                 this.#tbody.appendChild(tr)
@@ -35,6 +41,10 @@ class Table extends viewelement {
                 createTableCell(tr,author.work)
                 createTableCell(tr,author.concept)
             }
+        }
+        this.activatecallback = () => {
+            this.#tbody.innerHTML = "";
+            this.#manager.getAllElement();
         }
     }
 }
